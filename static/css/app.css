@@ -1,0 +1,26 @@
+#Title
+{
+color: black;
+}
+
+#Header
+{
+background-color: #0070c9;
+text-align:center;
+}
+
+#width
+{
+width: 0.7em;
+height: 0.7em;
+}
+
+#Navigation
+{
+background-color: black;
+}
+
+.NavText
+{
+font-size: 30px;
+}

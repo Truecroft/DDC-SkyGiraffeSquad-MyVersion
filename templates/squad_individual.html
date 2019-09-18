@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+       <link rel="stylesheet" href="../static/css/foundation.css">
+    <link rel="stylesheet" href="../static/css/app.css">
+    <link rel="stylesheet" href="../static/css/foundation.min.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-blue bg-light" style="margin-bottom:30px">
+    <a class="navbar-brand" href="#">NHS Photo Wall</a>
+    <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+            class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/register">Register Worker</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown"
+                   href="#" id="navbarDropdown" role="button">
+                    Tribes
+                </a>
+                <div aria-labelledby="navbarDropdown" class="dropdown-menu">
+                    <a class="dropdown-item" href="/squad_display">All Tribes</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/squad_individual_CIS">CIS</a>
+                    <a class="dropdown-item" href="/squad_individual_SPINE">Spine</a>
+                    <a class="dropdown-item" href="/squad_individual_SUS+">SUS+</a>
+                    <a class="dropdown-item" href="/squad_individual_HES">HES</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+<div class="row">
+    {% for squad in Squads %}
+    <div class="col-md-3">
+        <div class="card "  style="width: 18rem;">
+            <img src="../test_img.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="card-text"> <strong>Title:</strong> {{ squad.Name }}</p>
+                <p class="card-text"><strong>Tribe:</strong> {{ squad.Tribe }} </p>
+                <p class="card-text"><strong>Job Title:</strong> {{ squad.JobTitle }} </p>
+                <p class="card-text"> <strong>Fun Fact:</strong> {{ squad.FunFact }}</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    {% endfor %}
+
+<script src="../static/js/vendor/jquery.js"></script>
+<script src="../static/js/vendor/what-input.js"></script>
+<script src="../static/js/vendor/foundation.js"></script>
+<script src="../static/js/app.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>
+
+
